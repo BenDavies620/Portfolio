@@ -1,0 +1,212 @@
+// Burger button
+.burger-btn {
+  display: none;
+  position: fixed;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  color: $color-accent;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(156, 39, 176, 0.12);
+
+  &:hover {
+    background: $color-accent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.25);
+  }
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 1;
+    transform: translateY(2px);
+  }
+}
+
+// SVG Icon styles
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// SIDEBAR
+.sidebar {
+  background: $color-bg;
+  padding: $spacing-md;
+  text-align: center;
+  position: relative;
+  border-right: 3px solid $color-accent-alt;
+
+  .logo {
+    font-family: $font-headings;
+    font-size: 4rem;
+    font-weight: 700;
+    color: $color-accent-alt;
+    display: inline-block;
+    margin-bottom: $spacing-lg;
+    line-height: 1;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  .main-nav {
+    ul {
+      margin-bottom: $spacing-lg;
+
+      li {
+        padding: 0.5rem 0;
+        border-top: 1px solid $color-border;
+
+        &:last-child {
+          border-bottom: 1px solid $color-border;
+        }
+
+        a {
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: #2d3142;
+          display: block;
+          position: relative;
+          padding: 0.25rem 0;
+
+          &:hover {
+            color: $color-accent;
+          }
+
+          &.active {
+            color: $color-accent;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -2px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 60%;
+              height: 2px;
+              background: $color-accent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+      color: $color-accent-alt;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+// DESKTOP
+@media #{$lg} {
+  .burger-btn {
+    display: none !important;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $sidebar-width;
+    height: 100vh;
+    padding: $spacing-xl $spacing-md;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+
+    .logo {
+      margin-bottom: $spacing-xl;
+    }
+
+    .main-nav {
+      width: 100%;
+
+      ul {
+        margin-bottom: $spacing-xl;
+
+        li {
+          border-top: 1px solid $color-border;
+          border-bottom: none;
+
+          &:last-child {
+            border-bottom: 1px solid $color-border;
+          }
+
+          a {
+            padding: 0.6rem 0;
+
+            &.active::after {
+              width: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    .social-links {
+      margin-top: auto;
+    }
+  }
+
+  .main-content {
+    margin-left: $sidebar-width;
+  }
+}
+
+// MOBILE - Burger menu shows, sidebar slides in
+@media (max-width: 991px) {
+  .burger-btn {
+    display: flex;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -$sidebar-width;
+    width: $sidebar-width;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    padding-top: 5rem;
+    overflow-y: auto;
+
+    &.open {
+      left: 0;
+    }
+  }
+}

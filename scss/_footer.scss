@@ -1,0 +1,23 @@
+.footer {
+  padding: $spacing-lg $spacing-md $spacing-xl;
+  text-align: center;
+
+  .back-to-top {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2d3142;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    i {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      color: $color-text;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

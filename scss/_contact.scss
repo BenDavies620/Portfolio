@@ -1,0 +1,122 @@
+.contact {
+  padding: $spacing-xl $spacing-md;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media #{$lg} {
+    padding: $spacing-xl;
+  }
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media #{$lg} {
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-xl;
+    align-items: start;
+  }
+}
+
+.contact-info {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: $spacing-md;
+    color: #2d3142;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: $spacing-md;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    &:nth-child(3), &:nth-child(4) {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #2d3142;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    a {
+      color: $color-text;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }   
+  }
+}
+
+.contact-form {
+  width: 100%;
+  min-width: 0;
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media #{$sm} {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-md;
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    background: #e0e0e0;
+    color: $color-text;
+    margin-bottom: $spacing-md;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      outline: none;
+      background: #d5d5d5;
+    }
+  }
+
+  textarea {
+    min-height: 180px;
+    resize: vertical;
+  }
+
+  .btn-submit {
+    background: $color-accent;
+    color: white;
+    border: 2px solid $color-accent;
+    padding: 0.8rem 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+
+    &:hover {
+      background: $color-accent-alt;
+      border-color: $color-accent-alt;
+      color: white;
+    }
+
+    @media #{$sm} {
+      margin: 0;
+      display: inline-block;
+      width: fit-content;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.portfolio {
+  padding: $spacing-xl $spacing-md;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media #{$lg} {
+    padding: $spacing-xl $spacing-xl;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media #{$md} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+  }
+
+  @media #{$lg} {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg $spacing-md;
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  transform-origin: bottom center;
+  transition: all 0.5s ease;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: $spacing-md;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    border-radius: 5px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: $spacing-sm;
+    color: #2d3142;
+  }
+
+  .view-link {
+    color: #3d3d3d;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.5s ease;
+
+    svg {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        stroke-width: 0;
+        stroke: currentColor;
+        fill: currentColor;
+        padding-left: 0.1rem;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-7px);
+    img {
+      opacity: 0.85;
+    }
+
+    .view-link {
+      color: $color-accent-alt;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// COLOURS
+$color-bg:         #ffffff;
+$color-text:       #333333;
+$color-sidebar:    #f8f8f8;
+$color-accent:     #9c27b0;   // elegant purple — matches your design's marble/luxury feel
+$color-accent-alt: #7b1fa2;
+$color-border:     #e0e0e0;
+$color-soft:       #f0f0f0;
+
+// TYPOGRAPHY
+$font-headings: 'Playfair Display', serif;
+$font-body: 'Inter', sans-serif;
+
+// SPACING
+$font-size-base: 16px;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3.5rem;
+
+// SIDEBAR
+$sidebar-width: 200px;
+
+// BREAKPOINTS
+$xs: (max-width: 575px);
+$sm: (min-width: 576px);
+$md: (min-width: 768px);
+$lg: (min-width: 992px);
+$xl: (min-width: 1200px);
