@@ -1,0 +1,407 @@
+// ABOUT PAGE
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media #{$lg} {
+    padding: 0 $spacing-xl;
+  }
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $color-accent;
+  margin-bottom: $spacing-sm;
+}
+
+.about-me h1,
+.about-me h2,
+.about-me h3 {
+  color: #2d3142;
+}
+
+
+.about-hero {
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  background:linear-gradient(135deg, #321052 0%, #5b1685 55%, #8f42ad 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    right: -200px;
+    bottom: -250px;
+  }
+
+  .about-hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-xl $spacing-md;
+    position: relative;
+    z-index: 1;
+
+    @media #{$lg} {
+      padding: 5rem $spacing-xl;
+    }
+  }
+
+  .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  h1 {
+    color: white;
+    font-size: 3rem;
+    line-height: 1.05;
+    margin-bottom: $spacing-lg;
+
+    @media #{$md} {
+      font-size: 4.5rem;
+    }
+
+    @media #{$lg} {
+      font-size: 5.5rem;
+    }
+  }
+
+  .about-hero-intro {
+    max-width: 550px;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0;
+
+    @media #{$md} {
+      font-size: 1.15rem;
+    }
+  }
+}
+
+// INTRODUCTION
+.about-introduction {
+  padding: 4rem 0;
+
+  @media #{$md} {
+    padding: 6rem 0;
+  }
+}
+
+.about-introduction-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @media #{$md} {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4rem;
+  }
+
+  @media #{$lg} {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 5rem;
+  }
+}
+
+.about-introduction-image {
+  position: relative;
+  max-width: 500px;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -15px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $color-accent;
+    border-radius: 5px;
+    z-index: -1;
+  }
+}
+
+.about-introduction-content {
+
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: $spacing-lg;
+
+    @media #{$md} {
+      font-size: 2.8rem;
+    }
+  }
+
+  p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: $spacing-md;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.75;
+  }
+
+  .eyebrow {
+    color: $color-accent;
+  }
+}
+
+.about-introduction-signature {
+  margin-top: $spacing-lg;
+  padding-left: $spacing-md;
+  border-left: 2px solid $color-accent;
+
+  span {
+    display: block;
+    font-family: $font-headings;
+    font-size: 1.4rem;
+    color: #2d3142;
+  }
+
+  small {
+    color: #777;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+}
+
+// JOURNEY
+.about-journey {
+  padding: 4rem 0;
+  background: $color-soft;
+
+  @media #{$md} {
+    padding: 6rem 0;
+  }
+}
+
+.section-heading {
+  margin-bottom: 3rem;
+
+  h2 {
+    color: #2d3142;
+    font-size: 2.2rem;
+
+    @media #{$md} {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+.journey-content {
+  border-top: 1px solid $color-border;
+}
+
+.journey-item {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: $spacing-md;
+  padding: $spacing-lg 0;
+  border-bottom: 1px solid $color-border;
+
+  @media #{$md} {
+    grid-template-columns: 80px 1fr;
+    gap: $spacing-lg;
+    padding: 2.2rem 0;
+  }
+
+  .journey-number {
+    font-family: $font-headings;
+    font-size: 1.1rem;
+    color: $color-accent;
+    padding-top: 0.15rem;
+  }
+
+  h3 {
+    color: #2d3142;
+    font-size: 1.4rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    max-width: 750px;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+}
+
+// SKILLS
+.about-skills {
+  padding: 4rem 0;
+
+  @media #{$md} {
+    padding: 6rem 0;
+  }
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid $color-border;
+
+  @media #{$md} {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+}
+
+.skill-item {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: $spacing-md;
+  padding: $spacing-lg 0;
+  border-bottom: 1px solid $color-border;
+
+  .skill-number {
+    font-family: $font-headings;
+    color: $color-accent;
+    font-size: 1rem;
+  }
+
+  h3 {
+    color: #2d3142;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+}
+
+// BEYOND CODE
+.about-beyond {
+  padding: 4rem 0;
+  background: #fafafa;
+
+  @media #{$md} {
+    padding: 6rem 0;
+  }
+}
+
+.about-beyond-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @media #{$md} {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+}
+
+.about-beyond-heading {
+
+  h2 {
+    color: #2d3142;
+    font-size: 2.2rem;
+    line-height: 1.25;
+
+    @media #{$md} {
+      font-size: 3rem;
+    }
+  }
+}
+
+.about-beyond-content {
+
+  p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// WHAT'S NEXT
+.about-next {
+  padding: 5rem 0;
+  background: $color-accent;
+  color: white;
+
+  @media #{$md} {
+    padding: 7rem 0;
+  }
+}
+
+.about-next-content {
+  max-width: 750px;
+
+  .eyebrow {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  h2 {
+    color: white;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: $spacing-lg;
+
+    @media #{$md} {
+      font-size: 4rem;
+    }
+  }
+
+  p {
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.about-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid white;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  &:hover {
+    background: white;
+    color: $color-accent;
+  }
+}

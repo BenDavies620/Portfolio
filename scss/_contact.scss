@@ -95,9 +95,9 @@
   }
 
   .btn-submit {
-    background: $color-accent;
+    background: $color-accent-alt;
     color: white;
-    border: 2px solid $color-accent;
+    border: 2px solid $color-accent-alt;
     padding: 0.8rem 3rem;
     font-weight: 600;
     cursor: pointer;
@@ -108,8 +108,8 @@
     width: 100%;
 
     &:hover {
-      background: $color-accent-alt;
-      border-color: $color-accent-alt;
+      background: $color-accent;
+      border-color: $color-accent;
       color: white;
     }
 
