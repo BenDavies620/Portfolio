@@ -1,0 +1,350 @@
+.scs-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @media #{$lg} {
+        padding: 0 $spacing-xl;
+    }
+}
+
+// HERO
+.scs-hero {
+    min-height: 45vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #321052 0%, #5b1685 55%, #8f42ad 100%);
+    color: white;
+}
+
+.scs-hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem $spacing-md;
+    position: relative;
+    z-index: 2;
+
+    @media #{$md} {
+        padding: 5rem $spacing-lg;
+    }
+
+    @media #{$lg} {
+        padding: 5rem $spacing-xl;
+    }
+
+    .eyebrow {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    h1 {
+        color: white;
+        font-size: 3rem;
+        line-height: 1.05;
+        margin-bottom: $spacing-lg;
+
+        @media #{$md} {
+            font-size: 4.5rem;
+        }
+
+        @media #{$lg} {
+            font-size: 5.5rem;
+        }
+    }
+
+    > p:last-child {
+        max-width: 550px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 0;
+
+        @media #{$md} {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// HERO SHAPES
+.scs-hero-shapes {
+
+    span {
+        position: absolute;
+        display: block;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 50%;
+    }
+
+    span:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        right: -150px;
+        top: -100px;
+    }
+
+    span:nth-child(2) {
+        width: 450px;
+        height: 450px;
+        right: -225px;
+        top: -175px;
+    }
+
+    span:nth-child(3) {
+        width: 600px;
+        height: 600px;
+        right: -300px;
+        top: -250px;
+    }
+}
+
+// INTRODUCTION
+.scs-introduction {
+    padding: 4rem 0;
+
+    @media #{$md} {
+        padding: 6rem 0;
+    }
+}
+
+.scs-introduction .section-heading {
+    margin-bottom: 3rem;
+
+    .eyebrow {
+        margin-bottom: $spacing-sm;
+    }
+
+    h2 {
+        color: #2d3142;
+        font-size: 2.2rem;
+        line-height: 1.2;
+
+        @media #{$md} {
+            font-size: 3rem;
+        }
+    }
+}
+
+.scs-introduction .section-heading h2 {
+    color: #2d3142;
+    font-size: 2.2rem;
+    line-height: 1.2;
+
+    @media #{$md} {
+        font-size: 3rem;
+    }
+}
+
+.scs-introduction-content {
+    max-width: 800px;
+
+    p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: $spacing-md;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// TREEHOUSE
+.scs-treehouse {
+    padding: 4rem 0;
+    background: $color-soft;
+
+    @media #{$md} {
+        padding: 6rem 0;
+    }
+}
+
+.scs-treehouse-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+
+    @media #{$md} {
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 5rem;
+    }
+
+    h2 {
+        color: #2d3142;
+        font-size: 3rem;
+
+        @media #{$md} {
+            font-size: 4rem;
+        }
+    }
+}
+
+.scs-treehouse-content {
+
+    p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: $spacing-md;
+    }
+}
+
+.treehouse-score {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-md 0;
+    margin-top: $spacing-lg;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+
+    span {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #777;
+        margin-bottom: 0.3rem;
+    }
+
+    strong {
+        font-family: $font-headings;
+        font-size: 2.2rem;
+        color: $color-accent;
+    }
+}
+
+.scs-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: $spacing-lg;
+
+    color: $color-accent;
+    font-weight: 600;
+
+    transition: gap 0.3s ease;
+
+    span {
+        font-size: 1.3rem;
+    }
+
+    &:hover {
+        gap: 1.4rem;
+    }
+}
+
+// NETMATTERS
+.scs-netmatters {
+    padding: 4rem 0;
+
+    @media #{$md} {
+        padding: 6rem 0;
+    }
+}
+
+.netmatters-facts {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid $color-border;
+    margin-bottom: 3rem;
+
+    @media #{$sm} {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media #{$md} {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.netmatters-fact {
+    min-width: 0;
+    padding: $spacing-lg $spacing-md;
+    border-bottom: 1px solid $color-border;
+
+    @media #{$md} {
+        padding: 2rem 1.5rem;
+        border-right: 1px solid $color-border;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    strong {
+        display: block;
+        font-family: $font-headings;
+        font-size: 1.8rem;
+        color: $color-accent;
+        margin-bottom: 0.5rem;
+    }
+
+    span {
+        display: block;
+        color: #666;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
+.netmatters-description {
+    max-width: 800px;
+    margin-left: auto;
+    margin-bottom: 4rem;
+
+    p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: $spacing-md;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// AWARDS
+.netmatters-awards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid $color-border;
+
+    @media #{$md} {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    > div {
+        padding: $spacing-lg 0;
+        border-bottom: 1px solid $color-border;
+
+        @media #{$md} {
+            padding: 2rem;
+            
+            &:first-child {
+                padding-left: 0;
+                padding-right: 2rem;
+            }
+
+            &:last-child {
+                padding-right: 0;
+                padding-left: 2rem;
+                border-left: 1px solid $color-border;
+            }
+        }
+
+        span {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: $color-accent;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #2d3142;
+            font-size: 1.2rem;
+        }
+    }
+}
