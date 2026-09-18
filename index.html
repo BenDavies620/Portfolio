@@ -53,53 +53,53 @@
             <a href="#portfolio" class="scroll-down">Scroll Down<i class="fas fa-chevron-down"></i></a>
         </header>
 
-        <section class="portfolio" id="portfolio">
+        <section class="portfolio reveal" id="portfolio">
             <div class="projects-grid">
                 <!-- Project 1 -->
-<div class="project-card">
-  <img src="https://picsum.photos/id/10/800/500" alt="Project One">
-  <h3>Project One</h3>
-  <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
-</div>
+                <div class="project-card">
+                    <img src="https://picsum.photos/id/10/800/500" alt="Project One">
+                    <h3>Project One</h3>
+                    <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
+                </div>
 
-<!-- Project 2 -->
-<div class="project-card">
-  <img src="https://picsum.photos/id/180/800/500" alt="Project Two">
-  <h3>Project Two</h3>
-  <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
-</div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <img src="https://picsum.photos/id/180/800/500" alt="Project Two">
+                    <h3>Project Two</h3>
+                    <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
+                </div>
 
-<!-- Project 3 -->
-<div class="project-card">
-  <img src="https://picsum.photos/id/22/800/500" alt="Project Three">
-  <h3>Project Three</h3>
-  <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
-</div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <img src="https://picsum.photos/id/22/800/500" alt="Project Three">
+                    <h3>Project Three</h3>
+                    <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
+                </div>
 
-<!-- Project 4 -->
-<div class="project-card">
-  <img src="https://picsum.photos/id/42/800/500" alt="Project Four">
-  <h3>Project Four</h3>
-  <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
-</div>
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <img src="https://picsum.photos/id/42/800/500" alt="Project Four">
+                    <h3>Project Four</h3>
+                    <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
+                </div>
 
-<!-- Project 5 -->
-<div class="project-card">
-  <img src="https://picsum.photos/id/15/800/500" alt="Project Five">
-  <h3>Project Five</h3>
-  <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
-</div>
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <img src="https://picsum.photos/id/15/800/500" alt="Project Five">
+                    <h3>Project Five</h3>
+                    <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
+                </div>
 
-<!-- Project 6 -->
-<div class="project-card">
-  <img src="https://picsum.photos/id/96/800/500" alt="Project Six">
-  <h3>Project Six</h3>
-  <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
-</div>
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <img src="https://picsum.photos/id/96/800/500" alt="Project Six">
+                    <h3>Project Six</h3>
+                    <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
+                </div>
             </div>
         </section>
         
-        <section class="contact" id="contact">
+        <section class="contact reveal" id="contact">
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h2>Get In Touch</h2>
@@ -110,12 +110,20 @@
                 </div>
                 <form class="contact-form">
                     <div class="form-row">
-                        <input type="text" name="firstname" placeholder="First name" />
-                        <input type="text" name="lastname" placeholder="Last name" />
+                        <div class="form-field">
+                            <input type="text" name="firstname" placeholder="First name*" required />
+                        </div>
+                        <div class="form-field">
+                            <input type="text" name="lastname" placeholder="Last name*" required />
+                        </div>
+                        <div class="form-field">
+                            <input type="email" name="email" placeholder="Email Address*" required />
+                        </div>
+                        <input type="tel" name="phone" placeholder="Phone Number" />
                     </div>
-                    <input type="email" name="email" placeholder="Email Address" />
                     <input type="text" name="subject" placeholder="Subject" />
                     <textarea name="message" placeholder="Message"></textarea>
+                    <div class="success-msg" id="successMsg">Form submitted successfully! Thanks for reaching out.</div>
                     <button type="submit" class="btn-submit">Submit</button>
                 </form>
             </div>

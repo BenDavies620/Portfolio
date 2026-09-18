@@ -251,6 +251,22 @@
   }
 }
 
+.journey-item:nth-child(1) {
+    transition-delay: 0.25s;
+}
+
+.journey-item:nth-child(2) {
+    transition-delay: 0.5s;
+}
+
+.journey-item:nth-child(3) {
+    transition-delay: 0.75s;
+}
+
+.journey-item:nth-child(4) {
+    transition-delay: 1s;
+}
+
 // SKILLS
 .about-skills {
   padding: 4rem 0;
@@ -404,4 +420,26 @@
     background: white;
     color: $color-accent;
   }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
 }
