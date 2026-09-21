@@ -1,38 +1,48 @@
 // Burger button
 .burger-btn {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 1.2rem;
   left: 1.2rem;
   z-index: 1001;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(27, 31, 39, 0.6);
   backdrop-filter: blur(8px);
   border: none;
   width: 44px;
   height: 44px;
   border-radius: 8px;
   cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
   color: $color-accent;
   transition: all 0.3s ease;
   box-shadow: 0 2px 10px rgba(156, 39, 176, 0.12);
 
   &:hover {
-    background: $color-accent;
-    color: white;
+    background: rgba(27, 31, 39, 0.85);
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.25);
+    box-shadow: 0 4px 15px rgba(221, 49, 252, 0.45);
   }
 
-  i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    line-height: 1;
-    transform: translateY(2px);
+  span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: currentColor;
+    margin: 2px 0;
+  }
+}
+.burger-btn.open {
+  span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  span:nth-child(2) {
+    opacity: 0;
+  }
+  span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 }
 
@@ -47,11 +57,13 @@
 
 // SIDEBAR
 .sidebar {
-  background: $color-bg;
+  background: #37353f;
   padding: $spacing-md;
   text-align: center;
   position: relative;
   border-right: 3px solid $color-accent-alt;
+  display: flex;
+  flex-direction: column;
 
   .logo {
     font-family: $font-headings;
@@ -82,7 +94,7 @@
         a {
           font-size: 0.95rem;
           font-weight: 500;
-          color: #2d3142;
+          color: #d8d6dd;
           display: block;
           position: relative;
           padding: 0.25rem 0;
@@ -111,9 +123,8 @@
   }
 
   .social-links {
-    display: flex;
-    justify-content: center;
     gap: 1rem;
+    margin-top: auto;
 
     a {
       color: $color-accent-alt;
@@ -125,6 +136,9 @@
 
       &:hover {
         color: $color-accent;
+        transform: translateY(-5px);
+        transition: all 0.5s ease;
+        transform-origin: bottom center;
       }
     }
   }
@@ -143,8 +157,6 @@
     width: $sidebar-width;
     height: 100vh;
     padding: $spacing-xl $spacing-md;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     z-index: 1000;
 

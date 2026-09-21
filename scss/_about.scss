@@ -364,12 +364,12 @@
 
 // WHAT'S NEXT
 .about-next {
-  padding: 5rem 0;
+  padding: 5rem 0 2rem;
   background: $color-accent;
   color: white;
 
   @media #{$md} {
-    padding: 7rem 0;
+    padding: 7rem 0 2rem;
   }
 }
 
@@ -425,7 +425,7 @@
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 2.5s ease, transform 2.5s ease;
+  transition: opacity 2s ease, transform 2s ease;
 }
 
 .reveal.active {
