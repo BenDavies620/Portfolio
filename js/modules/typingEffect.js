@@ -1,4 +1,4 @@
-const text1 = "My Name is Benjamin Davies";
+const text1 = "My name is Benjamin Davies";
 const text2 = "I'm a Web Developer";
 const typingH1 = document.querySelector('#typing-text-h1');
 const typingP = document.querySelector('#typing-text-p');
@@ -9,12 +9,12 @@ if (typingH1 && typingP && cursor) {
         for(let i = 0; i < text1.length; i++) {
         setTimeout(function(){
             document.querySelector('#typing-text-h1').innerHTML += text1[i];
-        }, 100 * i); 
+        }, 80 * i); 
         }
         setTimeout(function(){
             document.querySelector('p').appendChild(document.querySelector('.cursor'));
             typeP()
-        }, 100 * text1.length);
+        }, 80 * text1.length);
     }
     type();
 
@@ -22,7 +22,7 @@ if (typingH1 && typingP && cursor) {
         for(let i = 0; i < text2.length; i++) {
         setTimeout(function(){
             document.querySelector('#typing-text-p').innerHTML += text2[i];
-        }, 100 * i); 
+        }, 80 * i); 
         }
     };
 }
