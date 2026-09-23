@@ -67,15 +67,72 @@
                 <span></span>
             </div>
         </header>
-        <section class="coding-coming-soon">
-            <div class="coding-container">
-                <div class="coding-message">
-                    <p class="eyebrow">In Development</p>
-                    <h2>Coming Soon...</h2>
-                    <a href="https://github.com/BenDavies620" target="_blank">
-                        View my GitHub
-                        <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg>
-                    </a>
+        <section class="code-example">
+            <div class="code-example-header">
+                <span class="eyebrow">Interactive Code</span>
+                <h2>Mobile Navigation</h2>
+                <p>See the JavaScript behind my portfolio's mobile navigation.</p>
+            </div>
+            <div class="code-demo">
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <span class="window-title">main.js</span>
+                    </div>
+                    <div class="code-content">
+<pre><code><span class="keyword">const</span> sidebar = document.<span class="function">querySelector</span>(<span class="string">'.sidebar'</span>);
+<span class="keyword">const</span> burger = document.<span class="function">querySelector</span>(<span class="string">'.burgerbtn'</span>);
+
+burger.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
+    <span class="keyword">if</span> (sidebar.className === <span class="string">'sidebar'</span>) {
+        sidebar.classList.<span class="function">add</span>(<span class="string">'open'</span>);
+        burger.classList.<span class="function">add</span>(<span class="string">'open'</span>);
+    } <span class="keyword">else</span> {
+        sidebar.classList.<span class="function">remove</span>(<span class="string">'open'</span>);
+        burger.classList.<span class="function">remove</span>(<span class="string">'open'</span>);
+    }
+});</code></pre>
+                    </div>
+                </div>
+                <div class="demo-preview">
+                    <div class="preview-header">
+                        <span>Live Preview</span>
+                    </div>
+                    <div class="preview-content">
+                        <button class="demo-burger" type="button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <div class="demo-sidebar">
+                            <a href="about.html">About Me</a>
+                            <a href="index.html#portfolio">My Portfolio</a>
+                            <a href="examples.html">Coding Examples</a>
+                            <a href="scs.html">SCS</a>
+                            <a href="index.html#contact">Contact</a>
+                        </div>
+                        <p>Click the menu button to try it!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="code-information">
+                <div class="code-info">
+                    <h3>Language Used</h3>
+                    <p>JavaScript</p>
+                </div>
+                <div class="code-info">
+                    <h3>What It Does</h3>
+                    <p>
+                        This JavaScript controls the mobile navigation menu
+                        on my portfolio.
+                    </p>
+                </div>
+                <div class="code-info">
+                    <h3>Why I've Used It</h3>
+                    <p>
+                        I used JavaScript to make the mobile navigation
+                        interactive and allow visitors to open and close
+                        the menu.
+                    </p>
                 </div>
             </div>
         </section>
