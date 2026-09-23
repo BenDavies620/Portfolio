@@ -57,11 +57,11 @@
 
 // SIDEBAR
 .sidebar {
-  background: #37353f;
+  background:linear-gradient(0deg, #321052 0%, #5b1685 55%, #8f42ad 100%);
   padding: $spacing-md;
   text-align: center;
   position: relative;
-  border-right: 3px solid $color-accent-alt;
+  border-right: 3px solid $color-nav;
   display: flex;
   flex-direction: column;
 
@@ -94,7 +94,7 @@
         a {
           font-size: 0.95rem;
           font-weight: 500;
-          color: #d8d6dd;
+          color: $color-bg;
           display: block;
           position: relative;
           padding: 0.25rem 0;
@@ -133,7 +133,7 @@
       justify-content: center;
       width: 36px;
       height: 36px;
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
       transform-origin: bottom center;
 
       .icon {
