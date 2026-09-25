@@ -135,6 +135,70 @@ burger.<span class="function">addEventListener</span>(<span class="string">'clic
                     </p>
                 </div>
             </div>
+            <div class="code-example-header">
+                <span class="eyebrow">Reusable Styling</span>
+                <h2>Reusable Navigation Themes</h2>
+                <p>See how I used SCSS mixins to create reusable navigation themes.</p>
+            </div>
+            <div class="code-demo">
+                <div class="code-window">
+                    <div class="code-window-header">
+                        <span class="window-title">_variables.scss</span>
+                    </div>
+                    <div class="code-content">
+<pre><code>
+<span class="at-rule">@mixin</span> nav-theme(<span class="string">$color</span>) {
+    > <span class="selector">a</span> {
+        <span class="string">color: $color</span>;
+
+        <span class="selector">small,
+        p</span> {
+            <span class="string">color: $text-white</span>;
+        }
+    }
+    <span class="nesting">&</span>:<span class="selector">hover</span> > <span class="selector">a</span> {
+        <span class="string">background-color: lighten($color, 8%)</span>;
+        <span class="string">color: $text-white</span>;
+    }
+    <span class="nesting">&</span>:<span class="selector">hover</span> > <span class="selector">a::after</span> {
+        <span class="string">background-color: lighten($color, 8%)</span>;
+    }
+    <span class="selector">.sub-menu-banner</span> {
+        <span class="string">background-color: $color</span>;
+    }
+}
+<span class="nesting">&</span><span class="selector">.it</span> {
+    <span class="at-rule">@include</span> nav-theme(<span class="string">$it-blue</span>);
+}</code></pre>
+                    </div>
+                </div>
+                <div class="demo-preview">
+                    <div class="preview-header">
+                        <span>Preview</span>
+                    </div>
+                    <div class="preview-content">
+                        <img src="img/it-support-banner.png" alt="example of it mixin">
+                    </div>
+                </div>
+            </div>
+            <div class="code-information">
+                <div class="code-info">
+                    <h3>Language Used</h3>
+                    <p>SCSS</p>
+                </div>
+                <div class="code-info">
+                    <h3>What It Does</h3>
+                    <p>
+                        This mixin creates the shared colour behaviour for each service in the main navigation. A colour is passed into the mixin and reused for the navigation link, hover state, dropdown banner and triangle indicator.
+                    </p>
+                </div>
+                <div class="code-info">
+                    <h3>Why I've Used It</h3>
+                    <p>
+                        Originally, the same navigation styles were repeated for every service with only the colour changing. I refactored the code into a mixin to reduce repetition and make the navigation easier to maintain.
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
     <div class="back-top-btn">
