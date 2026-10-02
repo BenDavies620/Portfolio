@@ -110,7 +110,7 @@ burger.<span class="function">addEventListener</span>(<span class="string">'clic
                             <a href="scs.html">SCS</a>
                             <a href="index.html#contact">Contact</a>
                         </div>
-                        <p>Click the menu button to try it!</p>
+                        <p class="demo-instruction">Click the menu button to try it!</p>
                     </div>
                 </div>
             </div>
@@ -135,6 +135,7 @@ burger.<span class="function">addEventListener</span>(<span class="string">'clic
                     </p>
                 </div>
             </div>
+
             <div class="code-example-header">
                 <span class="eyebrow">Reusable Styling</span>
                 <h2>Reusable Navigation Themes</h2>
@@ -172,7 +173,7 @@ burger.<span class="function">addEventListener</span>(<span class="string">'clic
 }</code></pre>
                     </div>
                 </div>
-                <div class="demo-preview">
+                <div class="demo-preview theme-preview">
                     <div class="preview-header">
                         <span>Preview</span>
                     </div>
@@ -197,6 +198,141 @@ burger.<span class="function">addEventListener</span>(<span class="string">'clic
                     <p>
                         Originally, the same navigation styles were repeated for every service with only the colour changing. I refactored the code into a mixin to reduce repetition and make the navigation easier to maintain.
                     </p>
+                </div>
+            </div>
+
+            <div class="cookie-example">
+                <div class="code-example-header">
+                    <span class="eyebrow">Interactive Code</span>
+                    <h2>Cookie Consent</h2>
+                    <p>See how my Netmatters recreation remembers cookie acceptance.</p>
+                </div>
+                <div class="code-demo">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="window-title" data-code-filename>
+                                cookieConsentDemo.js
+                            </span>
+                            <div class="cookie-source-controls" role="group" aria-label="Choose code language">
+                                <button type="button" class="cookie-source-button" data-code-view="javascript" aria-pressed="true">
+                                    JavaScript
+                                </button>
+
+                                <button type="button" class="cookie-source-button" data-code-view="html" aria-pressed="false">
+                                    HTML
+                                </button>
+                            </div>
+                        </div>
+                        <div class="code-content" data-code-panel="javascript">
+<pre><code><span class="keyword">const</span> storageKey = <span class="string">'portfolioCookieDemoAccepted'</span>;
+<span class="keyword">const</span> savedConsent = localStorage.<span class="function">getItem</span>(storageKey);
+
+<span class="keyword">function</span> <span class="function">updateDemo</span>(accepted) {
+    notice.hidden = accepted;
+    confirmation.hidden = !accepted;
+
+    <span class="keyword">if</span> (accepted) {
+        status.textContent = <span class="string">'Accepted'</span>;
+    } <span class="keyword">else</span> {
+        status.textContent = <span class="string">'Not accepted'</span>;
+    }
+    status.classList.<span class="function">toggle</span>(<span class="string">'is-accepted'</span>, accepted);
+}
+<span class="function">updateDemo</span>(savedConsent === <span class="string">'true'</span>);
+
+acceptBtn.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
+    localStorage.<span class="function">setItem</span>(storageKey, <span class="string">'true'</span>);
+    <span class="function">updateDemo</span>(<span class="keyword">true</span>);
+});
+resetBtn.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
+    localStorage.<span class="function">removeItem</span>(storageKey);
+    <span class="function">updateDemo</span>(<span class="keyword">false</span>);
+});</code></pre>
+                        </div>
+                        <div class="code-content" data-code-panel="html" hidden>
+<pre><code>&lt;<span class="selector">div</span> <span class="string">class="demo-preview cookie-preview"</span>&gt;
+    &lt;<span class="selector">div</span> <span class="string">class="preview-content"</span>&gt;
+        &lt;<span class="selector">div</span> <span class="string">class="cookie-status-row"</span>&gt;
+            &lt;<span class="selector">span</span>&gt;Saved choice&lt;/<span class="selector">span</span>&gt;
+            &lt;<span class="selector">strong</span>&gt;Not accepted&lt;/<span class="selector">strong</span>&gt;
+        &lt;/<span class="selector">div</span>&gt;
+        &lt;<span class="selector">div</span> <span class="string">class="cookie-notice"</span>&gt;
+            &lt;<span class="selector">h3</span>&gt;Cookies Policy&lt;/<span class="selector">h3</span>&gt;
+            &lt;<span class="selector">p</span>&gt;This demo remembers your choice.&lt;/<span class="selector">p</span>&gt;
+            &lt;<span class="selector">button</span> type="button" <span class="string">class="cookie-accept"</span>&gt;
+                Accept Cookies
+            &lt;/<span class="selector">button</span>&gt;
+        &lt;/<span class="selector">div</span>&gt;
+        &lt;<span class="selector">div</span> <span class="string">class="cookie-confirmation"</span>&gt;
+            &lt;<span class="selector">h3</span>&gt;Choice saved&lt;/<span class="selector">h3</span>&gt;
+            &lt;<span class="selector">p</span>&gt;Refresh the page to see it remembered.&lt;/<span class="selector">p</span>&gt;
+        &lt;/<span class="selector">div</span>&gt;
+        &lt;<span class="selector">button</span> type="button" <span class="string">class="cookie-reset"</span>&gt;
+            Reset Demo
+        &lt;/<span class="selector">button</span>&gt;
+    &lt;/<span class="selector">div</span>&gt;
+&lt;/<span class="selector">div</span>&gt;</code></pre>
+                        </div>
+                    </div>
+                    <div class="demo-preview cookie-preview">
+                        <div class="preview-header">
+                            <span>Live Preview</span>
+                        </div>
+                        <div class="preview-content">
+                            <div class="cookie-status-row">
+                                <span>Saved choice</span>
+                                <strong >Not accepted</strong>
+                            </div>
+                            <div class="cookie-notice">
+                                <div class="cookie-notice-header">
+                                    <p class="cookie-caption">Cookie consent demo</p>
+                                    <h3>Cookies Policy</h3>
+                                </div>
+                                <div class="cookie-notice-body">
+                                    <p>
+                                        This demo remembers your choice in your browser.
+                                        Accept cookies, then refresh the page to see it saved.
+                                    </p>
+                                    <button type="button" class="cookie-accept">Accept Cookies</button>
+                                </div>
+                            </div>
+                            <div class="cookie-confirmation">
+                                <h3>Choice saved</h3>
+                                <p>
+                                    Your acceptance is saved. Refresh the page and
+                                    this demo will remember it.
+                                </p>
+                            </div>
+                            <div class="cookie-demo-controls">
+                                <button type="button" class="cookie-reset">Reset Demo</button>
+                                <p class="cookie-hint">
+                                    Reset to show the notice again.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-information">
+                    <div class="code-info">
+                        <h3>Language Used</h3>
+                        <p>HTML and JavaScript</p>
+                    </div>
+                    <div class="code-info">
+                        <h3>What It Does</h3>
+                        <p>
+                            This example saves cookie acceptance in localStorage and
+                            checks it when the page loads. Once accepted, the notice
+                            stays hidden even after refreshing the page.
+                        </p>
+                    </div>
+                    <div class="code-info">
+                        <h3>Why I've Used It</h3>
+                        <p>
+                            I built this for my Netmatters recreation so visitors
+                            don't have to accept cookies every time they reload.
+                            I've added a reset button here so you can try it again.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
