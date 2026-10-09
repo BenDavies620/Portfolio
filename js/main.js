@@ -5,5 +5,7 @@ import './modules/reveal.js';
 import './modules/backToTop.js';
 import './modules/projectModal.js';
 import './modules/activeNav.js';
+import './modules/codeSwitcher.js';
 import './modules/examplesBtn.js';
 import './modules/cookieConsentDemo.js';
+import './modules/randomImgGenerator.js';

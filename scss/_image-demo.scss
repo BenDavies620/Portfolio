@@ -1,0 +1,46 @@
+//==============================
+// Random Image Demo
+//==============================
+.image-preview {
+    .image-demo-frame {
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, .08);
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+
+            &[hidden] {
+                display: none;
+            }
+        }
+    }
+
+    .demo-button {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    #demo-new-image:disabled {
+        cursor: wait;
+    }
+
+    #demo-image-status {
+        margin: 0;
+        text-align: center;
+    }
+
+    .preview-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

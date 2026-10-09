@@ -65,6 +65,7 @@
   border-right: 3px solid $color-nav;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 
   .logo {
     font-family: $font-headings;
@@ -216,12 +217,11 @@
     left: -$sidebar-width;
     width: $sidebar-width;
     height: 100vh;
+    overflow-y: auto;
     z-index: 1000;
     transition: left 0.3s ease;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    padding-top: 5rem;
-    overflow-y: auto;
-
+    
     &.open {
       left: 0;
     }

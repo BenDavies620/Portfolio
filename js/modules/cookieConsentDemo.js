@@ -13,7 +13,7 @@ if (cookieDemo) {
     const storageKey = 'portfolioCookieDemoAccepted';
     const savedConsent = localStorage.getItem(storageKey);
 
-    function updateDemo (accepted) {
+    function updateDemo(accepted) {
         notice.hidden = accepted;
         confirmation.hidden = !accepted;
 
@@ -34,32 +34,5 @@ if (cookieDemo) {
     resetBtn.addEventListener('click', () => {
         localStorage.removeItem(storageKey);
         updateDemo(false);
-    });
-}
-
-//====================
-//CODE DEMO TOGGLE
-//====================
-const cookieExample = document.querySelector('.cookie-example');
-
-if (cookieExample) {
-    const sourceBtns = cookieExample.querySelectorAll('[data-code-view]');
-    const sourcePanels = cookieExample.querySelectorAll('[data-code-panel]');
-    const sourceTitle = cookieExample.querySelector('[data-code-filename]');
-
-    sourceBtns.forEach((button) => {
-        button.addEventListener('click', () => {
-            sourcePanels.forEach((panel) => {
-                panel.hidden = panel.dataset.codePanel !== button.dataset.codeView;
-            });
-            sourceBtns.forEach((sourceBtn) => {
-                sourceBtn.setAttribute('aria-pressed', String(sourceBtn === button));
-            });
-            if (button.dataset.codeView === 'html') {
-                sourceTitle.textContent = 'examples.html';
-            } else {
-                sourceTitle.textContent = 'cookieConsentDemo.js'
-            }
-        });
     });
 }
