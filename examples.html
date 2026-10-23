@@ -44,7 +44,6 @@
             </ul>
         </nav>
         <div class="social-links">
-            <a href="https://www.instagram.com/bendavies124/" target="_blank"><svg class="icon icon-instagram"><use xlink:href="#icon-instagram"></use></svg></a>
             <a href="https://www.linkedin.com/in/benjamin-davies-b351b3224/" target="_blank"><svg class="icon icon-linkedin2"><use xlink:href="#icon-linkedin2"></use></svg></a>
             <a href="https://github.com/BenDavies620" target="_blank"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
         </div>
@@ -458,6 +457,105 @@ resetBtn.<span class="function">addEventListener</span>(<span class="string">'cl
                         <h3>Why I've Used It</h3>
                         <p>
                             I built this for PhotoNest - the image to email gallery, so visitors can request different photos to save to their email collections. This demo shows the image loading part on its own.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PHP form validation -->
+            <section class="code-example php-validation-example" aria-labelledby="php-example-title">
+                <div class="code-example-header">
+                    <span class="eyebrow">Code Example</span>
+                    <h2 id="php-example-title">Server-Side Form Validation</h2>
+                    <p>See how PHP checks enquiries submitted through my Netmatters contact form.</p>
+                </div>
+
+                <div class="code-demo">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="window-title">
+                                contact-handler.php
+                            </span>
+                        </div>
+
+                        <div class="code-content">
+<pre><code><span class="comment">// Values have already been checked as strings and trimmed.</span>
+<span class="comment">// $errors also contains any errors from those type checks.</span>
+
+$fieldValues = [
+    <span class="string">'name'</span> =&gt; $name,
+    <span class="string">'email'</span> =&gt; $email,
+    <span class="string">'telephone'</span> =&gt; $telephone,
+    <span class="string">'message'</span> =&gt; $message,
+];
+
+$requiredFields = [
+    <span class="string">'name'</span> =&gt; <span class="string">'Please enter your name.'</span>,
+    <span class="string">'email'</span> =&gt; <span class="string">'Please enter your email address.'</span>,
+    <span class="string">'telephone'</span> =&gt; <span class="string">'Please enter your telephone number.'</span>,
+    <span class="string">'message'</span> =&gt; <span class="string">'Please enter your message.'</span>,
+];
+
+<span class="keyword">foreach</span> ($requiredFields <span class="keyword">as</span> $field =&gt; $errorMessage) {
+    <span class="keyword">if</span> ($fieldValues[$field] === <span class="string">''</span> &amp;&amp; !<span class="function">isset</span>($errors[$field])) {
+        $errors[$field] = $errorMessage;
+    }
+}
+
+<span class="keyword">if</span> ($email !== <span class="string">''</span>) {
+    $result = <span class="function">filter_var</span>($email, <span class="keyword">FILTER_VALIDATE_EMAIL</span>);
+
+    <span class="keyword">if</span> ($result === <span class="keyword">false</span>) {
+        $errors[<span class="string">'email'</span>] = <span class="string">'Please enter a valid email address.'</span>;
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-preview validation-preview">
+                        <div class="preview-header">
+                            <span>Example Result</span>
+                        </div>
+
+                        <div class="preview-content">
+                            <figure class="validation-result">
+                                <img
+                                    src="img/contact-validation.png"
+                                    alt="Contact form showing PHP errors for an invalid email and missing telephone number and message, while keeping the entered name and company."
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Submitted with JavaScript disabled to demonstrate
+                                    the server-side checks.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-information">
+                    <div class="code-info">
+                        <h3>Language Used</h3>
+                        <p>PHP</p>
+                    </div>
+
+                    <div class="code-info">
+                        <h3>What It Does</h3>
+                        <p>
+                            Checks required fields and validates the email format.
+                            Errors are collected in an array and displayed above
+                            the form, while entered values are kept so visitors
+                            can correct their submission.
+                        </p>
+                    </div>
+
+                    <div class="code-info">
+                        <h3>Why I've Used It</h3>
+                        <p>
+                            JavaScript gives visitors immediate feedback, but it
+                            can be disabled or bypassed. I added PHP validation
+                            so enquiries are checked on the server before being
+                            saved to the database.
                         </p>
                     </div>
                 </div>
