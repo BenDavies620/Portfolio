@@ -1,54 +1,24 @@
+<?php
+session_start();
+
+require_once __DIR__ . '/includes/contact-handler.php';
+
+$pageTitle = 'Benjamin Davies Portfolio';
+$pageDescription = 'Junior web developer portfolio of Benjamin Davies, featuring projects built with HTML, CSS, Sass, JavaScript and PHP.';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="stylesheet" href="css/application.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/png" href="img/BD.png">
-    <title>Benjamin Davies Portfolio</title>
-</head>
+<script>
+    if (sessionStorage.getItem('returnToContact') === 'true') {
+        document.documentElement.classList.add('restore-contact');
+    }
+</script>
+<?php require __DIR__ . '/includes/head.php'; ?>
 <body>
-    <svg style="display: none;" width="0" height="0">
-        <symbol id="icon-instagram" viewBox="0 0 32 32">
-            <path d="M16 2.881c4.275 0 4.781 0.019 6.462 0.094 1.563 0.069 2.406 0.331 2.969 0.55 0.744 0.288 1.281 0.638 1.837 1.194 0.563 0.563 0.906 1.094 1.2 1.838 0.219 0.563 0.481 1.412 0.55 2.969 0.075 1.688 0.094 2.194 0.094 6.463s-0.019 4.781-0.094 6.463c-0.069 1.563-0.331 2.406-0.55 2.969-0.288 0.744-0.637 1.281-1.194 1.837-0.563 0.563-1.094 0.906-1.837 1.2-0.563 0.219-1.413 0.481-2.969 0.55-1.688 0.075-2.194 0.094-6.463 0.094s-4.781-0.019-6.463-0.094c-1.563-0.069-2.406-0.331-2.969-0.55-0.744-0.288-1.281-0.637-1.838-1.194-0.563-0.563-0.906-1.094-1.2-1.837-0.219-0.563-0.481-1.413-0.55-2.969-0.075-1.688-0.094-2.194-0.094-6.463s0.019-4.781 0.094-6.463c0.069-1.563 0.331-2.406 0.55-2.969 0.288-0.744 0.638-1.281 1.194-1.838 0.563-0.563 1.094-0.906 1.838-1.2 0.563-0.219 1.412-0.481 2.969-0.55 1.681-0.075 2.188-0.094 6.463-0.094zM16 0c-4.344 0-4.887 0.019-6.594 0.094-1.7 0.075-2.869 0.35-3.881 0.744-1.056 0.412-1.95 0.956-2.837 1.85-0.894 0.888-1.438 1.781-1.85 2.831-0.394 1.019-0.669 2.181-0.744 3.881-0.075 1.713-0.094 2.256-0.094 6.6s0.019 4.887 0.094 6.594c0.075 1.7 0.35 2.869 0.744 3.881 0.413 1.056 0.956 1.95 1.85 2.837 0.887 0.887 1.781 1.438 2.831 1.844 1.019 0.394 2.181 0.669 3.881 0.744 1.706 0.075 2.25 0.094 6.594 0.094s4.888-0.019 6.594-0.094c1.7-0.075 2.869-0.35 3.881-0.744 1.050-0.406 1.944-0.956 2.831-1.844s1.438-1.781 1.844-2.831c0.394-1.019 0.669-2.181 0.744-3.881 0.075-1.706 0.094-2.25 0.094-6.594s-0.019-4.887-0.094-6.594c-0.075-1.7-0.35-2.869-0.744-3.881-0.394-1.063-0.938-1.956-1.831-2.844-0.887-0.887-1.781-1.438-2.831-1.844-1.019-0.394-2.181-0.669-3.881-0.744-1.712-0.081-2.256-0.1-6.6-0.1v0z"></path>
-            <path d="M16 7.781c-4.537 0-8.219 3.681-8.219 8.219s3.681 8.219 8.219 8.219 8.219-3.681 8.219-8.219c0-4.537-3.681-8.219-8.219-8.219zM16 21.331c-2.944 0-5.331-2.387-5.331-5.331s2.387-5.331 5.331-5.331c2.944 0 5.331 2.387 5.331 5.331s-2.387 5.331-5.331 5.331z"></path>
-            <path d="M26.462 7.456c0 1.060-0.859 1.919-1.919 1.919s-1.919-0.859-1.919-1.919c0-1.060 0.859-1.919 1.919-1.919s1.919 0.859 1.919 1.919z"></path>
-        </symbol>
-        <symbol id="icon-linkedin2" viewBox="0 0 32 32">
-            <path d="M12 12h5.535v2.837h0.079c0.77-1.381 2.655-2.837 5.464-2.837 5.842 0 6.922 3.637 6.922 8.367v9.633h-5.769v-8.54c0-2.037-0.042-4.657-3.001-4.657-3.005 0-3.463 2.218-3.463 4.509v8.688h-5.767v-18z"></path>
-            <path d="M2 12h6v18h-6v-18z"></path>
-            <path d="M8 7c0 1.657-1.343 3-3 3s-3-1.343-3-3c0-1.657 1.343-3 3-3s3 1.343 3 3z"></path>
-        </symbol>
-        <symbol id="icon-arrow-right2" viewBox="0 0 32 32">
-            <path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path>
-        </symbol>
-        <symbol id="icon-github" viewBox="0 0 32 32">
-            <path d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path>
-        </symbol>
-    </svg>
-    <button class="burger-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <aside class="sidebar">
-        <a href="index.html" class="logo">BD</a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="#portfolio">My Portfolio</a></li>
-                <li><a href="examples.html">Coding Examples</a></li>
-                <li><a href="scs.html">Scion Coalition Scheme</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/benjamin-davies-b351b3224/" target="_blank"><svg class="icon icon-linkedin2"><use xlink:href="#icon-linkedin2"></use></svg></a>
-            <a href="https://github.com/BenDavies620" target="_blank"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
-        </div>
-    </aside>
-
+    <?php require __DIR__ . '/includes/svg.php'; ?>
+    <?php require __DIR__ . '/includes/sidebar.php'; ?>
     <main class="main-content">
 
         <header class="hero">
@@ -64,14 +34,14 @@
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card" data-description="A recreation of the Netmatters homepage. Used: HTML, SASS compiled CSS, JavaScript." data-live="http://netmatters.benjamin-davies.netmatters-scs.co.uk/" data-github="https://github.com/BenDavies620/Netmatters-Site">
-                    <img src="img/Netmatters-recreation.png" alt="Project One - Netmatters recreation">
+                    <img src="img/Netmatters-recreation.webp" alt="Screenshot of my Netmatters website recreation">
                     <h3>Netmatters Site Recreation</h3>
                     <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card" data-description="A responsive image gallery for assigning and organising photos by email address. Used: HTML, SASS compiled CSS, JavaScript." data-live="http://js-array.benjamin-davies.netmatters-scs.co.uk/" data-github="https://github.com/BenDavies620/PhotoNest-Image_to_email_gallery">
-                    <img src="img/PhotoNest.png" alt="Project Two - JavaScript image to email gallery">
+                    <img src="img/PhotoNest.webp" alt="Screenshot of PhotoNest, my JavaScript image gallery">
                     <h3>PhotoNest-Image To Email Gallery </h3>
                     <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
                 </div>
@@ -154,7 +124,7 @@
                         <span>DevTools</span>
                     </div>
                 </div>
-                <a href="about.html#skills-detail" class="skills-badges-link">
+                <a href="about.php#skills-detail" class="skills-badges-link">
                     See full skill details
                     <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg>
                 </a>
@@ -168,25 +138,37 @@
                     <h2>Get In Touch</h2>
                     <p>I’m currently completing my training at Netmatters and looking for opportunities to start my career as a Junior Web Developer. Feel free to get in touch - I’d love to hear from you!</p>
                     <p><a href="tel:07364110483">07364 110483</a></p>
-                    <p><a href="mailto:benjamin.davies@netmatters-scs.com">Benjamin.Davies@netmatters-scs.com</a></p>
+                    <p><a href="mailto:bendavies2503@hotmail.com">bendavies2503@hotmail.com</a></p>
                     <p>Based in Norwich, Norfolk</p>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="index.php#contact" method="POST" novalidate>
+                    <?php if ($successMessage !== ''): echo '<p class="success-message" role="status">' . htmlspecialchars($successMessage) . '</p>'; ?>
+                    <?php endif; ?>
+                    <?php if ($errors !== []): ?>
+                        <div class="error-message" role="alert">
+                            <ul>
+                                <?php foreach($errors as $errorMessage) {
+                                    echo '<li>' . htmlspecialchars($errorMessage) . '</li>';
+                                } ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
                     <div class="form-row">
                         <div class="form-field">
-                            <input type="text" name="firstname" placeholder="First name*" required />
+                            <input type="text" name="firstName" placeholder="First name*" required maxlength="100" autocomplete="given-name" value="<?= htmlspecialchars($firstName) ?>"/>
                         </div>
                         <div class="form-field">
-                            <input type="text" name="lastname" placeholder="Last name*" required />
+                            <input type="text" name="lastName" placeholder="Last name*" required maxlength="100" autocomplete="family-name" value="<?= htmlspecialchars($lastName) ?>"/>
                         </div>
                         <div class="form-field">
-                            <input type="email" name="email" placeholder="Email Address*" required />
+                            <input type="email" name="email" placeholder="Email Address*" required maxlength="254" autocomplete="email" value="<?= htmlspecialchars($email) ?>"/>
                         </div>
-                        <input type="tel" name="phone" placeholder="Phone Number" />
+                        <input type="tel" name="telephone" placeholder="Phone Number" maxlength="30" autocomplete="tel" value="<?= htmlspecialchars($telephone) ?>"/>
                     </div>
-                    <input type="text" name="subject" placeholder="Subject" />
-                    <textarea name="message" placeholder="Message"></textarea>
-                    <div class="success-msg" id="successMsg">Form submitted successfully! Thanks for reaching out.</div>
+                    <input type="text" name="subject" placeholder="Subject" maxlength="255" value="<?= htmlspecialchars($subject) ?>"/>
+                    <div class="form-field">
+                        <textarea name="message" placeholder="Message*" required maxlength="5000"><?= htmlspecialchars($message) ?></textarea>
+                    </div>
                     <button type="submit" class="btn-submit">Submit</button>
                 </form>
             </div>

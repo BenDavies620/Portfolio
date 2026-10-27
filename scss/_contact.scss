@@ -139,20 +139,37 @@
     animation: errorSlideIn 0.2s ease;
   }
 
-  .success-msg {
-    background: rgba(13, 150, 105, 0.1);
-    border: 1px solid rgba(13, 150, 105, 0.3);
-    color: #0f7a55;
-    padding: 0.8rem 1rem;
+  
+  .success-message {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #f7f2fb;
+    border: 1px solid $color-accent;
+    color: $color-accent-alt;
+    padding: 1rem;
     border-radius: 5px;
     margin-bottom: $spacing-md;
-    display: none;
     animation: successFadeIn 0.3s ease;
 
-    &.show {
-      display: block;
+    &::before {
+      content: "✓";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e5d4f2;
+      color: $color-accent-alt;
+      font-weight: bold;
     }
   }
+}
+
+html.restore-contact {
+    visibility: hidden;
 }
 
 //Animations

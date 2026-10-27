@@ -199,6 +199,11 @@
         position: relative;
         min-height: 305px;
         padding: 25px;
+
+        figcaption {
+            text-align: center;
+            margin-top: 25px;
+        }
     }
 }
 
