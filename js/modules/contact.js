@@ -1,7 +1,6 @@
-const fields = document.querySelectorAll('.contact-form input[required]');
-const submit = document.querySelector('.btn-submit');
+const fields = document.querySelectorAll('.contact-form [required]');
+const submitForm = document.querySelector('.contact-form');
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const successMsg = document.getElementById('successMsg');
 
 function isFieldEmpty(field) {
     return !field.value.trim();
@@ -10,31 +9,28 @@ function isFieldEmpty(field) {
 function showError(field, message) {
     field.classList.add('error');
     const parent = field.parentElement;
-    let errorEl = parent.querySelector('.error-message');
+    let errorE1 = parent.querySelector('.error-message');
 
-    if (!errorEl) {
-        errorEl = document.createElement('p');
-        errorEl.classList.add('error-message');
-        parent.appendChild(errorEl);
+    if (!errorE1) {
+        errorE1 = document.createElement('p');
+        errorE1.classList.add('error-message');
+        parent.appendChild(errorE1);
     }
-    errorEl.textContent = message;
+    errorE1.textContent = message;
 }
 
 function clearError(field) {
     field.classList.remove('error');
     const parent = field.parentElement;
-    const errorEl = parent.querySelector('.error-message');
+    const errorE1 = parent.querySelector('.error-message');
 
-    if (errorEl) {
-        errorEl.remove();
+    if (errorE1) {
+        errorE1.remove();
     }
 }
 
-if (submit) {
-    submit.addEventListener('click', function(event) {
-        event.preventDefault();
-        successMsg.classList.remove('show');
-
+if (submitForm) {
+    submitForm.addEventListener('submit', function(event) {
         let formIsValid = true;
 
         for (let i = 0; i < fields.length; i++) {
@@ -53,8 +49,10 @@ if (submit) {
             }
         }
 
-        if (formIsValid) {
-            successMsg.classList.add('show');
+        if (!formIsValid) {
+            event.preventDefault();
+        } else {
+            sessionStorage.setItem('returnToContact', 'true');
         }
     });
 }
@@ -74,3 +72,23 @@ fields.forEach(function(field) {
         }
     });
 });
+
+const successMessage = document.querySelector('.success-message');
+
+if (successMessage) {
+    setTimeout(function () {
+        successMessage.remove();
+    }, 5000);
+}
+
+if (sessionStorage.getItem('returnToContact') === 'true') {
+    sessionStorage.removeItem('returnToContact');
+
+    const contactSection = document.getElementById('contact');
+
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'instant' });
+    }
+
+    document.documentElement.classList.remove('restore-contact');
+}
