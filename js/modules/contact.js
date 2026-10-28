@@ -1,6 +1,7 @@
 const fields = document.querySelectorAll('.contact-form [required]');
 const submitForm = document.querySelector('.contact-form');
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const MIN_MESSAGE_LENGTH = 10;
 
 function isFieldEmpty(field) {
     return !field.value.trim();
@@ -43,6 +44,9 @@ if (submitForm) {
                 if (field.name === 'email' && !emailRegex.test(field.value.trim())) {
                     showError(field, 'Please enter a valid email address.');
                     formIsValid = false;
+                } else if (field.name === 'message' && field.value.trim().length < MIN_MESSAGE_LENGTH) {
+                    showError(field, 'Please enter a message of at least ' + MIN_MESSAGE_LENGTH + ' characters.');
+                    formIsValid = false;
                 } else {
                     clearError(field);
                 }
@@ -63,6 +67,10 @@ fields.forEach(function(field) {
             if (!isFieldEmpty(field)) {
                 if (field.name === 'email') {
                     if (emailRegex.test(field.value.trim())) {
+                        clearError(field);
+                    }
+                } else if (field.name === 'message') {
+                    if (field.value.trim().length >= MIN_MESSAGE_LENGTH) {
                         clearError(field);
                     }
                 } else {

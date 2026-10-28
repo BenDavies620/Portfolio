@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $requiredFields = [
         'firstName' => 'Please enter your first name.',
-        'lastName' => 'Please enter you last name.',
+        'lastName' => 'Please enter your last name.',
         'email' => 'Please enter your email address.',
         'message' => 'Please enter your message.'
     ];
@@ -80,6 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result === false) {
             $errors['email'] = 'Please enter a valid email address.';
         }
+    }
+    if ($message !== '' && mb_strlen($message) < 10) {
+        $errors['message'] = 'Please enter a message of at least 10 characters.';
     }
 
     if (!preg_match("/^[\p{L}\p{M}]+(?:[ '\x{2019}-][\p{L}\p{M}]+)*$/u", $firstName)) {
@@ -145,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $_SESSION['success-message'] = 'Thanks for getting in touch! Your enquiry has been received.';
         
-        header('Location: index.php', true, 303);
+        header('Location: index.php#contact', true, 303);
         exit;
     }
 }

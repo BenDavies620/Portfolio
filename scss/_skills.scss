@@ -35,11 +35,11 @@
   margin-bottom: $spacing-lg;
 
   @media #{$sm} {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
   @media #{$md} {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 1.25rem;
   }
 }
@@ -108,8 +108,8 @@
   gap: 2.5rem;
   margin-bottom: 3rem;
 
-  @media #{$lg} {
-    grid-template-columns: repeat(3, 1fr);
+  @media #{$md} {
+    grid-template-columns: repeat(2, 1fr);
     gap: $spacing-lg;
   }
 }

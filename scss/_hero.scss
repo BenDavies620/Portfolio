@@ -76,3 +76,5 @@
 @media #{$lg} {
   .hero-overlay h1 { font-size: 4rem; }
 }
+.hero-overlay .cursor { display: none; }
+.js .hero-overlay .cursor { display: inline; }

@@ -5,6 +5,8 @@ const typingP = document.querySelector('#typing-text-p');
 const cursor = document.querySelector('.cursor');
 
 if (typingH1 && typingP && cursor) {
+    typingH1.innerHTML = '';
+    typingP.innerHTML = '';
     function type() {
         for(let i = 0; i < text1.length; i++) {
         setTimeout(function(){
