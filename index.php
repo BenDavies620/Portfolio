@@ -23,8 +23,8 @@ $pageDescription = 'Junior web developer portfolio of Benjamin Davies, featuring
 
         <header class="hero">
             <div class="hero-overlay">
-                <h1><span id="typing-text-h1"></span><span class="cursor">|</span></h1>
-                <p><span id="typing-text-p"></span></p>
+                <h1><span id="typing-text-h1">My name is Benjamin Davies</span><span class="cursor">|</span></h1>
+                <p><span id="typing-text-p">I'm a Web Developer</span></p>
             </div>
             <a href="#portfolio" class="scroll-down">Scroll Down<i class="fas fa-chevron-down"></i></a>
         </header>
@@ -100,6 +100,14 @@ $pageDescription = 'Junior web developer portfolio of Benjamin Davies, featuring
                         <span>JavaScript</span>
                     </div>
                     <div class="badge-item">
+                        <i class="fab fa-php"></i>
+                        <span>PHP</span>
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-database"></i>
+                        <span>SQL</span>
+                    </div>
+                    <div class="badge-item">
                         <i class="fab fa-git-alt"></i>
                         <span>Git</span>
                     </div>
@@ -167,7 +175,7 @@ $pageDescription = 'Junior web developer portfolio of Benjamin Davies, featuring
                     </div>
                     <input type="text" name="subject" placeholder="Subject" maxlength="255" value="<?= htmlspecialchars($subject) ?>"/>
                     <div class="form-field">
-                        <textarea name="message" placeholder="Message*" required maxlength="5000"><?= htmlspecialchars($message) ?></textarea>
+                        <textarea name="message" placeholder="Message* (minimum 10 characters)" required minlength="10" maxlength="5000"><?= htmlspecialchars($message) ?></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Submit</button>
                 </form>

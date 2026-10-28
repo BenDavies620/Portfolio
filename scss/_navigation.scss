@@ -207,23 +207,10 @@
 
 // MOBILE - Burger menu shows, sidebar slides in
 @media (max-width: 991px) {
-  .burger-btn {
-    display: flex;
-  }
-
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -$sidebar-width;
-    width: $sidebar-width;
-    height: 100vh;
-    overflow-y: auto;
-    z-index: 1000;
-    transition: left 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    
-    &.open {
-      left: 0;
-    }
+  .burger-btn { display: none; }
+  .js .burger-btn { display: flex; }
+  .sidebar { position: static; width: 100%; height: auto; box-shadow: none; }
+  .js .sidebar { position: fixed; top: 0; left: -$sidebar-width; width: $sidebar-width; height: 100vh; overflow-y: auto; z-index: 1000; transition: left 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    &.open { left: 0; }
   }
 }

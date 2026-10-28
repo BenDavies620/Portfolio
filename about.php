@@ -200,6 +200,31 @@ $pageDescription = "Learn about Benjamin Davies, an aspiring web developer based
                             </div>
                         </div>
                     </div>
+                    <!-- Backend & Databases -->
+                    <div class="skills-category">
+                        <h3 class="category-title">Backend &amp; Databases</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-card-icon">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <div class="skill-card-content">
+                                    <h4>PHP</h4>
+                                    <p>Building server-side functionality with PHP, including form handling, validation, sessions, templating and working with databases through PDO prepared statements.</p>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-card-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="skill-card-content">
+                                    <h4>SQL / MySQL</h4>
+                                    <p>Designing and querying relational databases with SQL, creating tables and securely storing and retrieving data using prepared statements.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Tools & Workflow -->
                     <div class="skills-category">
                         <h3 class="category-title">Tools & Workflow</h3>
