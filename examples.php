@@ -525,6 +525,105 @@ $requiredFields = [
                     </div>
                 </div>
             </section>
+
+
+            <!-- Laravel company logo management -->
+            <section class="code-example company-logo-example" aria-labelledby="company-logo-example-title">
+                <div class="code-example-header">
+                    <span class="eyebrow">Code Example</span>
+                    <h2 id="company-logo-example-title">Company Logo Management</h2>
+                    <p>See how Laravel handles company logo uploads, replacements and removal.</p>
+                </div>
+
+                <div class="code-demo">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <span class="window-title">
+                                CompanyController.php
+                            </span>
+                        </div>
+
+                        <div class="code-content">
+<pre><code><span class="keyword">public function</span> <span class="function">update</span>(CompanyRequest $request, Company $company)
+{
+    <span class="variable">$validated</span> = $request-&gt;<span class="function">validated</span>();
+
+    <span class="variable">$removeLogo</span> = <span class="variable">$validated</span>[<span class="string">'remove_logo'</span>] ?? <span class="keyword">false</span>;
+
+    <span class="function">unset</span>(<span class="variable">$validated</span>[<span class="string">'remove_logo'</span>]);
+
+    <span class="variable">$oldLogo</span> = <span class="keyword">null</span>;
+
+    <span class="keyword">if</span> ($request-&gt;<span class="function">hasFile</span>(<span class="string">'logo'</span>)) {
+        <span class="variable">$oldLogo</span> = <span class="variable">$company</span>-&gt;logo;
+
+        <span class="variable">$validated</span>[<span class="string">'logo'</span>] = $request-&gt;<span class="function">file</span>(<span class="string">'logo'</span>)
+            -&gt;<span class="function">store</span>(<span class="string">'companies'</span>, <span class="string">'public'</span>);
+
+    } <span class="keyword">elseif</span> ($removeLogo &amp;&amp; <span class="variable">$company</span>-&gt;logo) {
+        <span class="variable">$oldLogo</span> = <span class="variable">$company</span>-&gt;logo;
+        <span class="variable">$validated</span>[<span class="string">'logo'</span>] = <span class="keyword">null</span>;
+    }
+
+    <span class="variable">$company</span>-&gt;<span class="function">update</span>(<span class="variable">$validated</span>);
+
+    <span class="keyword">if</span> (<span class="variable">$oldLogo</span> !== <span class="keyword">null</span>) {
+        Storage::<span class="function">disk</span>(<span class="string">'public'</span>)-&gt;<span class="function">delete</span>(<span class="variable">$oldLogo</span>);
+    }
+
+    <span class="keyword">return</span> <span class="function">redirect</span>()-&gt;<span class="function">route</span>(<span class="string">'companies.index'</span>)
+        -&gt;<span class="function">with</span>(<span class="string">'success'</span>, <span class="string">'Company updated successfully!'</span>);
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="demo-preview logo-preview">
+                        <div class="preview-header">
+                            <span>Example Result</span>
+                        </div>
+
+                        <div class="preview-content">
+                            <figure class="logo-result">
+                                <img
+                                    src="img/edit-company.webp"
+                                    alt="Company edit form showing an existing uploaded logo, with options to replace or remove the image."
+                                    loading="lazy"
+                                >
+                                <figcaption>
+                                    Company editing interface showing the existing logo, with options to replace or remove the uploaded image.
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-information">
+                    <div class="code-info">
+                        <h3>Technologies Used</h3>
+                        <p>PHP, Laravel, Eloquent ORM</p>
+                    </div>
+
+                    <div class="code-info">
+                        <h3>What It Does</h3>
+                        <p>
+                            Handles company logo uploads, replacements and removal.
+                            New images are stored using Laravel's filesystem, while
+                            outdated images are automatically deleted when replaced
+                            or removed.
+                        </p>
+                    </div>
+
+                    <div class="code-info">
+                        <h3>Why I've Used It</h3>
+                        <p>
+                            I wanted to manage uploaded files alongside company records
+                            without leaving unnecessary files behind. This uses Laravel's
+                            validation, filesystem and Eloquent features to keep the
+                            database and stored images synchronised.
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
     <div class="back-top-btn">

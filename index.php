@@ -33,23 +33,23 @@ $pageDescription = 'Junior web developer portfolio of Benjamin Davies, featuring
         <section class="portfolio reveal" id="portfolio">
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card" data-description="A recreation of the Netmatters homepage. Used: HTML, SASS compiled CSS, JavaScript." data-live="http://netmatters.benjamin-davies.netmatters-scs.co.uk/" data-github="https://github.com/BenDavies620/Netmatters-Site">
+                <div class="project-card" data-description="A recreation of the Netmatters homepage. Used: HTML, SASS compiled CSS, JavaScript." data-live="https://netmatters.benjamin-davies.netmatters-scs.co.uk/" data-github="https://github.com/BenDavies620/Netmatters-Site">
                     <img src="img/Netmatters-recreation.webp" alt="Screenshot of my Netmatters website recreation">
                     <h3>Netmatters Site Recreation</h3>
                     <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card" data-description="A responsive image gallery for assigning and organising photos by email address. Used: HTML, SASS compiled CSS, JavaScript." data-live="http://js-array.benjamin-davies.netmatters-scs.co.uk/" data-github="https://github.com/BenDavies620/PhotoNest-Image_to_email_gallery">
+                <div class="project-card" data-description="A responsive image gallery for assigning and organising photos by email address. Used: HTML, SASS compiled CSS, JavaScript." data-live="https://js-array.benjamin-davies.netmatters-scs.co.uk/" data-github="https://github.com/BenDavies620/PhotoNest-Image_to_email_gallery">
                     <img src="img/PhotoNest.webp" alt="Screenshot of PhotoNest, my JavaScript image gallery">
                     <h3>PhotoNest-Image To Email Gallery </h3>
                     <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card">
-                    <img src="https://picsum.photos/id/22/800/500" alt="Project Three">
-                    <h3>Project Three</h3>
+                <div class="project-card" data-description="A Laravel-based admin dashboard for managing companies and employees, featuring authentication, CRUD functionality, logo uploads and employee-company relationships. Used: PHP, Laravel, MySQL, Blade, Bootstrap, SASS, JavaScript." data-live="https://laravel.benjamin-davies.netmatters-scs.co.uk/" data-github="https://github.com/BenDavies620/Laravel-Admin-Panel">
+                    <img src="img/Admin-panel.webp" alt="Screenshot of Admin Panel, my Laravel management workspace">
+                    <h3>Admin Panel-Management Workspace</h3>
                     <a href="#" class="view-link">View Project <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
                 </div>
 
